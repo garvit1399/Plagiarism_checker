@@ -2,7 +2,7 @@ from flask import Flask, request, render_template
 import re
 import math
 
-app = Flask("__name__")
+app = Flask(__name__)
 
 q = ""
 
@@ -90,4 +90,5 @@ def cosineSimilarity():
 
 	return render_template('index.html', query=inputQuery, output=output)
 
-app.run()
+if __name__ == '__main__':
+	app.run()
